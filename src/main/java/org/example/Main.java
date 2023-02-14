@@ -54,16 +54,16 @@ public class Main {
     }
 
     private static void addContact() {
-        System.out.print("Inserisci il nome del contatto: ");
+        logger.log(Level.INFO,"Inserisci il nome del contatto: ");
         String nome = scanner.nextLine();
 
-        System.out.print("Inserisci il cognome del contatto: ");
+        logger.log(Level.INFO,"Inserisci il cognome del contatto: ");
         String cognome = scanner.nextLine();
 
-        System.out.print("Inserisci il numero di telefono del contatto: ");
+        logger.log(Level.INFO,"Inserisci il numero di telefono del contatto: ");
         String telefono = scanner.nextLine();
 
-        System.out.print("Inserisci l'indirizzo email del contatto: ");
+        logger.log(Level.INFO,"Inserisci l'indirizzo email del contatto: ");
         String email = scanner.nextLine();
 
         Contact contact = new Contact(nome, cognome, telefono, email);
@@ -71,7 +71,7 @@ public class Main {
     }
 
     private static void searchByName() {
-        System.out.print("Inserisci il nome del contatto da cercare: ");
+        logger.log(Level.INFO,"Inserisci il nome del contatto da cercare: ");
         String nome = scanner.nextLine();
 
         Contact contact = addressBook.searchByName(nome);
@@ -86,7 +86,7 @@ public class Main {
     }
 
     private static void searchByPhone() {
-        System.out.print("Inserisci il numero di telefono del contatto da cercare: ");
+        logger.log(Level.INFO,"Inserisci il numero di telefono del contatto da cercare: ");
         String telefono = scanner.nextLine();
 
         Contact contact = addressBook.searchByPhone(telefono);
@@ -101,7 +101,7 @@ public class Main {
     }
 
     private static void removeContact() {
-        System.out.print("Inserisci il nome del contatto da rimuovere: ");
+        logger.log(Level.INFO,"Inserisci il nome del contatto da rimuovere: ");
         String nome = scanner.nextLine();
 
         Contact contact = addressBook.searchByName(nome);
