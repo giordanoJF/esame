@@ -77,7 +77,7 @@ public class Main {
         Contact contact = addressBook.searchByName(nome);
 
         if (contact == null) {
-            logger.log(Level.INFO,"Nessun contatto trovato con il nome " + nome);
+            logger.log(Level.INFO,"Nessun contatto trovato con il nome %s", nome);
         } else {
             logger.log(Level.INFO,contact.getNome() + " " + contact.getCognome());
             logger.log(Level.INFO,NUMERO_DI_TELEFONO + contact.getTelefono());
