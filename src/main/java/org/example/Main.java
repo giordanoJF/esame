@@ -15,7 +15,7 @@ public class Main {
         boolean quit = false;
 
         while (!quit) {
-            logger.log(Level.INFO,"Seleziona un'opzione:");
+            logger.log(Level.INFO,"Seleziona un\'opzione:");
             logger.log(Level.INFO,"1 - Aggiungi contatto");
 
             logger.log(Level.INFO,"2 - Cerca contatto per nome");
@@ -63,7 +63,7 @@ public class Main {
         logger.log(Level.INFO,"Inserisci il numero di telefono del contatto: ");
         String telefono = scanner.nextLine();
 
-        logger.log(Level.INFO,"Inserisci l'indirizzo email del contatto: ");
+        logger.log(Level.INFO,"Inserisci l\'indirizzo email del contatto: ");
         String email = scanner.nextLine();
 
         Contact contact = new Contact(nome, cognome, telefono, email);
