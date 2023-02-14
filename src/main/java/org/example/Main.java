@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     private static AddressBook addressBook = new AddressBook();
     private static Scanner scanner = new Scanner(System.in);
+    public static final String NUMERO_DI_TELEFONO = "numero di telefono: ";
 
     public static void main(String[] args) {
         boolean quit = false;
@@ -74,7 +75,7 @@ public class Main {
             System.out.println("Nessun contatto trovato con il nome " + nome);
         } else {
             System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println("Numero di telefono: " + contact.getTelefono());
+            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
             System.out.println("Indirizzo email: " + contact.getEmail());
         }
     }
@@ -89,7 +90,7 @@ public class Main {
             System.out.println("Nessun contatto trovato con il numero di telefono " + telefono);
         } else {
             System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println("Numero di telefono: " + contact.getTelefono());
+            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
             System.out.println("Indirizzo email: " + contact.getEmail());
         }
     }
@@ -113,7 +114,7 @@ public class Main {
 
         for (Contact contact : addressBook.getAllContacts()) {
             System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println("Numero di telefono: " + contact.getTelefono());
+            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
             System.out.println("Indirizzo email: " + contact.getEmail());
             System.out.println("--------------------------");
         }
