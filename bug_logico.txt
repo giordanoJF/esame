@@ -1,0 +1,1 @@
+il bug logico si manifesta quando si vuole cancellare un contatto che abbia uno o più omonimi nella rubrica, cancellando così solo il primo che trova.
