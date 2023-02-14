@@ -1,24 +1,28 @@
 package org.example;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class Main {
     private static AddressBook addressBook = new AddressBook();
     private static Scanner scanner = new Scanner(System.in);
     public static final String NUMERO_DI_TELEFONO = "numero di telefono: ";
     public static final String INDIRIZZO_EMAIL = "Indirizzo email: ";
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
         boolean quit = false;
 
         while (!quit) {
-            System.out.println("Seleziona un'opzione:");
-            System.out.println("1 - Aggiungi contatto");
+            logger.log(Level.INFO,"Seleziona un'opzione:");
+            logger.log(Level.INFO,"1 - Aggiungi contatto");
 
-            System.out.println("2 - Cerca contatto per nome");
-            System.out.println("3 - Cerca contatto per numero di telefono");
-            System.out.println("4 - Visualizza tutti i contatti");
-            System.out.println("5 - Cancella contatto");
-            System.out.println("6 - Esci");
+            logger.log(Level.INFO,"2 - Cerca contatto per nome");
+            logger.log(Level.INFO,"3 - Cerca contatto per numero di telefono");
+            logger.log(Level.INFO,"4 - Visualizza tutti i contatti");
+            logger.log(Level.INFO,"5 - Cancella contatto");
+            logger.log(Level.INFO,"6 - Esci");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -43,7 +47,7 @@ public class Main {
                     quit = true;
                     break;
                 default:
-                    System.out.println("Opzione non valida");
+                    logger.log(Level.INFO,"Opzione non valida");
                     break;
             }
         }
@@ -73,11 +77,11 @@ public class Main {
         Contact contact = addressBook.searchByName(nome);
 
         if (contact == null) {
-            System.out.println("Nessun contatto trovato con il nome " + nome);
+            logger.log(Level.INFO,"Nessun contatto trovato con il nome " + nome);
         } else {
-            System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
-            System.out.println(INDIRIZZO_EMAIL + contact.getEmail());
+            logger.log(Level.INFO,contact.getNome() + " " + contact.getCognome());
+            logger.log(Level.INFO,NUMERO_DI_TELEFONO + contact.getTelefono());
+            logger.log(Level.INFO,INDIRIZZO_EMAIL + contact.getEmail());
         }
     }
 
@@ -88,11 +92,11 @@ public class Main {
         Contact contact = addressBook.searchByPhone(telefono);
 
         if (contact == null) {
-            System.out.println("Nessun contatto trovato con il numero di telefono " + telefono);
+            logger.log(Level.INFO,"Nessun contatto trovato con il numero di telefono " + telefono);
         } else {
-            System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
-            System.out.println(INDIRIZZO_EMAIL + contact.getEmail());
+            logger.log(Level.INFO,contact.getNome() + " " + contact.getCognome());
+            logger.log(Level.INFO,NUMERO_DI_TELEFONO + contact.getTelefono());
+            logger.log(Level.INFO,INDIRIZZO_EMAIL + contact.getEmail());
         }
     }
 
@@ -103,21 +107,21 @@ public class Main {
         Contact contact = addressBook.searchByName(nome);
 
         if (contact == null) {
-            System.out.println("Nessun contatto trovato con il nome " + nome);
+            logger.log(Level.INFO,"Nessun contatto trovato con il nome " + nome);
         } else {
             addressBook.removeContact(contact);
-            System.out.println("Contatto rimosso correttamente");
+            logger.log(Level.INFO,"Contatto rimosso correttamente");
         }
     }
 
     private static void displayContacts() {
-        System.out.println("Elenco contatti:");
+        logger.log(Level.INFO,"Elenco contatti:");
 
         for (Contact contact : addressBook.getAllContacts()) {
-            System.out.println(contact.getNome() + " " + contact.getCognome());
-            System.out.println(NUMERO_DI_TELEFONO + contact.getTelefono());
-            System.out.println(INDIRIZZO_EMAIL+ contact.getEmail());
-            System.out.println("--------------------------");
+            logger.log(Level.INFO,contact.getNome() + " " + contact.getCognome());
+            logger.log(Level.INFO,NUMERO_DI_TELEFONO + contact.getTelefono());
+            logger.log(Level.INFO,INDIRIZZO_EMAIL+ contact.getEmail());
+            logger.log(Level.INFO,"--------------------------");
         }
     }
 }
